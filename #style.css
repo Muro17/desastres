@@ -1,4 +1,4 @@
-{
+*{
 
     margin: 0;
     padding: 0; 
@@ -26,52 +26,4 @@ div{
     padding:20px; 
 }
 
-
-
-
-
-ul li{
-    list-style: none;
-}
-
-.texto{
-    color:white;
-}
-
-a{
-    color:white;
-    text-decoration: none;
-}
-
-.lista{
-    display: none;
-    position: absolute;
-    top: 100%;
-    background-color: green;
-    width: 100%
-    padding: 20px 0;
-    text-align: center;
-
-}
-
-.caixa:checked ~ .lista{
-    display: block;
-}
-
-#menu{
-    display: none;
-}
-
-.lista-item{
-    padding: 12px 0;
-}
-
-
-
-@media screen and (min-width: 1024px) {
-    
-}
-@media screen and (min-width: 1728px) {
-
-}
 
