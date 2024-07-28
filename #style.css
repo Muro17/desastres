@@ -14,29 +14,6 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.tabs {
-  display: flex;
-  justify-content: center;
-  background-color: #333;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.tab-link {
-  color: white;
-  padding: 14px 20px;
-  cursor: pointer;
-  text-align: center;
-  transition: background-color 0.3s;
-}
-
-.tab-link.active {
-  background-color: #4CAF50;
-}
-
-.tab-link:hover {
-  background-color: #575757;
-}
-
 nav {
   display: flex;
   justify-content: center;
@@ -52,8 +29,9 @@ nav a {
   transition: background-color 0.3s;
 }
 
-nav a:hover {
-  background-color: #575757;
+nav a:hover, nav a.active {
+  background-color: #4CAF50;
+  color: white;
 }
 
 .content {
@@ -71,14 +49,6 @@ h2 {
   padding-bottom: 10px;
 }
 
-.section {
-  display: none;
-}
-
-.section.active {
-  display: block;
-}
-
 ul {
   list-style-type: square;
   padding-left: 20px;
@@ -86,15 +56,15 @@ ul {
 
 @media (max-width: 600px) {
   nav {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   nav a {
-      padding: 10px;
+    padding: 10px;
   }
 
   .content {
-      padding: 10px;
+    padding: 10px;
   }
 }
 
@@ -112,16 +82,3 @@ ul {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   border-radius: 5px;
-}
-
-.tabs {
-  margin-bottom: 20px;
-}
-
-.tab-content {
-  display: none;
-}
-
-.tab-content.active {
-  display: block;
-}
