@@ -11,79 +11,86 @@
         <h1>Projeto Agrinho - Desastres Naturais</h1>
     </header>
 
-    <nav id="main-menu">
-        <a href="#" data-target="home">Início</a>
-        <a href="#" data-target="about">Sobre o Projeto</a>
-        <a href="#" data-target="types">Tipos de Desastres Naturais</a>
-        <a href="#" data-target="prevention">Prevenção</a>
-        <a href="#" data-target="contact">Contato</a>
-    </nav>
+    <div class="tabs">
+        <button class="tab-link active" data-tab="tab1">Menu Principal</button>
+        <button class="tab-link" data-tab="tab2">Menu Secundário</button>
+    </div>
 
-    <nav id="secondary-menu" style="display: none;">
-        <a href="#" data-target="secondary1">Secundário 1</a>
-        <a href="#" data-target="secondary2">Secundário 2</a>
-    </nav>
-
-    <div class="content">
-        <div id="home" class="section active">
-            <h2>Bem-vindo ao informativo sobre desastres naturais</h2>
-            <p>Esse informativo aborda temas importantes sobre desastres naturais, promovendo conscientização e educação, para que assim, pessoas em áreas rurais não sejam prejudicadas e possam se defender devidamente.</p>
-        </div>
-        <div id="about" class="section">
-            <h2>Sobre o Projeto</h2>
-            <p>Esse projeto é uma iniciativa da atividade escolar 'Projeto Agrinho' que tem a intenção de educar crianças e jovens, tal como em nosso trabalho, escolhemos informar sobre a importância da prevenção e preparação para desastres naturais.</p>
-        </div>
-        <div id="types" class="section">
-            <h2>Tipos de Desastres Naturais</h2>
-            <ul>
-                <li>Terremotos</li>
-                <li>Enchentes</li>
-                <li>Furacões</li>
-                <li>Deslizamentos de terra</li>
-                <li>Incêndios florestais</li>
-            </ul>
-        </div>
-        <div id="prevention" class="section">
-            <h2>Prevenção</h2>
-            <p>Medidas preventivas são essenciais para minimizar os impactos dos desastres naturais, aqui estão algumas dicas para se proteger.</p>
-        </div>
-        <div id="contact" class="section">
-            <h2>Contato</h2>
-            <p>Para mais informações, entre em contato conosco através do email: mauro.teleginski@escola.pr.gov.br / dhyovana.nascimento@escola.pr.gov.br
-            </p>
-        </div>
-        <div id="secondary1" class="section">
-            <h2>Secundário 1</h2>
-            <p>Conteúdo da seção secundária 1.</p>
-        </div>
-        <div id="secondary2" class="section">
-            <h2>Secundário 2</h2>
-            <p>Conteúdo da seção secundária 2.</p>
+    <div id="tab1" class="tab-content active">
+        <nav>
+            <a href="#" data-target="home">Início</a>
+            <a href="#" data-target="about">Sobre o Projeto</a>
+            <a href="#" data-target="types">Tipos de Desastres Naturais</a>
+            <a href="#" data-target="prevention">Prevenção</a>
+            <a href="#" data-target="contact">Contato</a>
+        </nav>
+        <div class="content">
+            <div id="home" class="section active">
+                <h2>Bem-vindo ao informativo sobre desastres naturais</h2>
+                <p>Esse informativo aborda temas importantes sobre desastres naturais, promovendo conscientização e educação, para que assim, pessoas em áreas rurais não sejam prejudicadas e possam se defender devidamente.</p>
+            </div>
+            <div id="about" class="section">
+                <h2>Sobre o Projeto</h2>
+                <p>Esse projeto é uma iniciativa da atividade escolar 'Projeto Agrinho' que tem a intenção de educar crianças e jovens, tal como em nosso trabalho, escolhemos informar sobre a importância da prevenção e preparação para desastres naturais.</p>
+            </div>
+            <div id="types" class="section">
+                <h2>Tipos de Desastres Naturais</h2>
+                <ul>
+                    <li>Terremotos</li>
+                    <li>Enchentes</li>
+                    <li>Furacões</li>
+                    <li>Deslizamentos de terra</li>
+                    <li>Incêndios florestais</li>
+                </ul>
+            </div>
+            <div id="prevention" class="section">
+                <h2>Prevenção</h2>
+                <p>Medidas preventivas são essenciais para minimizar os impactos dos desastres naturais, aqui estão algumas dicas para se proteger.</p>
+            </div>
+            <div id="contact" class="section">
+                <h2>Contato</h2>
+                <p>Para mais informações, entre em contato conosco através do email: mauro.teleginski@escola.pr.gov.br / dhyovana.nascimento@escola.pr.gov.br
+                </p>
+            </div>
         </div>
     </div>
-    
+
+    <div id="tab2" class="tab-content">
+        <nav>
+            <a href="#" data-target="secondary1">Secundário 1</a>
+            <a href="#" data-target="secondary2">Secundário 2</a>
+        </nav>
+        <div class="content">
+            <div id="secondary1" class="section active">
+                <h2>Secundário 1</h2>
+                <p>Conteúdo da seção secundária 1.</p>
+            </div>
+            <div id="secondary2" class="section">
+                <h2>Secundário 2</h2>
+                <p>Conteúdo da seção secundária 2.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
-        document.querySelectorAll('nav#main-menu a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-                document.getElementById(this.dataset.target).classList.add('active');
-                
-                if (this.dataset.target === 'types' || this.dataset.target === 'prevention') {
-                    document.getElementById('main-menu').style.display = 'none';
-                    document.getElementById('secondary-menu').style.display = 'flex';
-                } else {
-                    document.getElementById('main-menu').style.display = 'flex';
-                    document.getElementById('secondary-menu').style.display = 'none';
-                }
+        // Alternância entre abas
+        document.querySelectorAll('.tab-link').forEach(button => {
+            button.addEventListener('click', () => {
+                const tab = button.dataset.tab;
+                document.querySelectorAll('.tab-link').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                button.classList.add('active');
+                document.getElementById(tab).classList.add('active');
             });
         });
 
-        document.querySelectorAll('nav#secondary-menu a').forEach(link => {
+        // Alternância entre seções dentro das abas
+        document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-                document.getElementById(this.dataset.target).classList.add('active');
+                const target = this.dataset.target;
+                this.closest('.tab-content').querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+                document.getElementById(target).classList.add('active');
             });
         });
     </script>
