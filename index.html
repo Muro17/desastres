@@ -1,26 +1,94 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desastres Naturais 3000</title>
-    <link rel= "styleheet" href="stlyle.css">
-
+    <title>Projeto Agrinho - Desastres Naturais</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content {
+            padding: 20px;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
-     <h1>  desastres naturais 3000  </h1>
-<a href="#"> Sobre nós</a>  
-<a href="#"> saiba mais</a>
+        <h1>Projeto Agrinho - Desastres Naturais</h1>
     </header>
-
-    <section>
-    <img src="#" alt="descriçao" 
-    <div> 
-        <h2>introdução </h2>
-           <p> introdução do site</p>
-    </div> 
-    </section>
+    <nav>
+        <a href="#" data-target="home">Início</a>
+        <a href="#" data-target="about">Sobre o Projeto</a>
+        <a href="#" data-target="types">Tipos de Desastres Naturais</a>
+        <a href="#" data-target="prevention">Prevenção</a>
+        <a href="#" data-target="contact">Contato</a>
+    </nav>
+    <div class="content">
+        <div id="home" class="section active">
+            <h2>Bem-vindo ao Projeto Agrinho</h2>
+            <p>O Projeto Agrinho aborda temas importantes sobre desastres naturais, promovendo conscientização e educação.</p>
+        </div>
+        <div id="about" class="section">
+            <h2>Sobre o Projeto</h2>
+            <p>O Projeto Agrinho é uma iniciativa que visa educar crianças e jovens sobre a importância da prevenção e preparação para desastres naturais.</p>
+        </div>
+        <div id="types" class="section">
+            <h2>Tipos de Desastres Naturais</h2>
+            <ul>
+                <li>Terremotos</li>
+                <li>Enchentes</li>
+                <li>Furacões</li>
+                <li>Deslizamentos de terra</li>
+                <li>Incêndios florestais</li>
+            </ul>
+        </div>
+        <div id="prevention" class="section">
+            <h2>Prevenção</h2>
+            <p>Medidas preventivas são essenciais para minimizar os impactos dos desastres naturais. A educação e a preparação são fundamentais.</p>
+        </div>
+        <div id="contact" class="section">
+            <h2>Contato</h2>
+            <p>Para mais informações, entre em contato conosco através do email: projetoagrinho@example.com</p>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+                document.getElementById(this.dataset.target).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
-
