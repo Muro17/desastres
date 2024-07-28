@@ -10,13 +10,20 @@
     <header>
         <h1>Projeto Agrinho - Desastres Naturais</h1>
     </header>
-    <nav>
+
+    <nav id="main-menu">
         <a href="#" data-target="home">Início</a>
         <a href="#" data-target="about">Sobre o Projeto</a>
         <a href="#" data-target="types">Tipos de Desastres Naturais</a>
         <a href="#" data-target="prevention">Prevenção</a>
         <a href="#" data-target="contact">Contato</a>
     </nav>
+
+    <nav id="secondary-menu" style="display: none;">
+        <a href="#" data-target="secondary1">Secundário 1</a>
+        <a href="#" data-target="secondary2">Secundário 2</a>
+    </nav>
+
     <div class="content">
         <div id="home" class="section active">
             <h2>Bem-vindo ao informativo sobre desastres naturais</h2>
@@ -45,9 +52,34 @@
             <p>Para mais informações, entre em contato conosco através do email: mauro.teleginski@escola.pr.gov.br / dhyovana.nascimento@escola.pr.gov.br
             </p>
         </div>
+        <div id="secondary1" class="section">
+            <h2>Secundário 1</h2>
+            <p>Conteúdo da seção secundária 1.</p>
+        </div>
+        <div id="secondary2" class="section">
+            <h2>Secundário 2</h2>
+            <p>Conteúdo da seção secundária 2.</p>
+        </div>
     </div>
+    
     <script>
-        document.querySelectorAll('nav a').forEach(link => {
+        document.querySelectorAll('nav#main-menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+                document.getElementById(this.dataset.target).classList.add('active');
+                
+                if (this.dataset.target === 'types' || this.dataset.target === 'prevention') {
+                    document.getElementById('main-menu').style.display = 'none';
+                    document.getElementById('secondary-menu').style.display = 'flex';
+                } else {
+                    document.getElementById('main-menu').style.display = 'flex';
+                    document.getElementById('secondary-menu').style.display = 'none';
+                }
+            });
+        });
+
+        document.querySelectorAll('nav#secondary-menu a').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
