@@ -83,19 +83,3 @@ ul {
     padding: 10px;
   }
 }
-
-#home {
-  background-image: url('images/sua-imagem.jpg'); /* Substitua pelo caminho correto da sua imagem */
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-  padding: 40px;
-  border-radius: 8px;
-}
-
-#home h2, #home p {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 5px;
-}
